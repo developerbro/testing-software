@@ -7,6 +7,8 @@
 			"express" : "~4.0.0",
             "mongoose" : "latest",
             "body-parser" : "latest",
-            "glob" : "latest"
+            "glob" : "latest",
+            "passport" : "latest",
+            "passport-ember-auth" : "git://github.com/inerd89/passport-ember-auth.git"
 	}
 }
