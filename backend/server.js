@@ -48,16 +48,12 @@ router.route('/users/:user_id')
         User.findById(req.params.user_id, function(err, user) {
             if (err)
                 res.send(err);
-//            var jsonBody = JSON.stringify(req.body);
-            console.log(req.body.user);
-            //user.name = JSON.stringify(req.body).user.name;
-            /*user.save(function(err) {
+            user.name = req.body.user.name;
+            user.save(function(err) {
                 if (err)
                     res.send(err);
                 res.json(201, {user: user});
             });
-            */
-            res.json({message:"OK"});
         });
     })
     .delete(function(req, res) {
