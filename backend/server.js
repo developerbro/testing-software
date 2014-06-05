@@ -38,17 +38,26 @@ router.route('/users')
 
 router.route('/users/:user_id')
     .get(function(req, res) {
+        User.findById(req.params.user_id, function(err, user) {
+            if (err)
+                res.send(err);
+            res.json({user: user});
+        });
     })
     .put(function(req, res) {
         User.findById(req.params.user_id, function(err, user) {
             if (err)
                 res.send(err);
-            user.name = req.body.name;
-            user.save(function(err) {
+//            var jsonBody = JSON.stringify(req.body);
+            console.log(req.body.user);
+            //user.name = JSON.stringify(req.body).user.name;
+            /*user.save(function(err) {
                 if (err)
                     res.send(err);
                 res.json(201, {user: user});
             });
+            */
+            res.json({message:"OK"});
         });
     })
     .delete(function(req, res) {

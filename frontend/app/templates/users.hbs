@@ -1,4 +1,9 @@
 USERS<br>
 {{#each controller.content}}
-    {{name}} - {{_id}}
+    <button {{action 'delete' this}}>X</button>
+    {{#link-to 'user' this}}
+        {{name}}
+    {{/link-to}}<br>
 {{/each}}
+<br>
+{{outlet}}
