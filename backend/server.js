@@ -21,7 +21,7 @@ router.use(function(req, res, next) {
 router.route('/users')
     .post(function(req, res) {
         var user = new User();
-        user.name = req.body.name;
+        user.name = req.body.user.name;
         user.save(function(err) {
             if (err)
                 res.send(err);

@@ -1,4 +1,6 @@
 USERS<br>
+{{#link-to 'users-new'}}New User{{/link-to}}
+<br>
 {{#each controller.content}}
     <button {{action 'delete' this}}>X</button>
     {{#link-to 'user' this}}
