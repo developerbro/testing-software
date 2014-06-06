@@ -10,6 +10,7 @@ Router.map(function() {
         this.resource('users-new', {path: '/new'});
     });
     this.route('secret');
+    this.route('profile');
 });
 
 export default Router;

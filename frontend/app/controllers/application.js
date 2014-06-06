@@ -10,6 +10,7 @@ export default Ember.ObjectController.extend({
                 authToken  : ''
             });
             localStorage.clear();
+            this.transitionToRoute('login');
         }
     }
 });

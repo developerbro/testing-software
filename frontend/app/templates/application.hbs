@@ -1,13 +1,35 @@
 <div class="container">
-<h2 id='title'>Welcome to Testing software v0.1</h2>
-{{#link-to 'index'}}index{{/link-to}}
-{{#if session.isLoggedin}}
-    {{session.name}}
-    <button class="btn btn-default" {{action 'logout'}}>logout</button>
-{{else}}
-    {{#link-to 'login'}}login{{/link-to}}
-{{/if}}
-{{#link-to 'secret'}}secret{{/link-to}}
-<hr>
-{{outlet}}
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                {{#link-to 'index' class="navbar-brand"}}Testware{{/link-to}}
+            </div>
+
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    {{#link-to 'index' tagName="li"}}<a>Home</a>{{/link-to}}
+                    {{#link-to 'secret' tagName="li"}}<a>Secret</a>{{/link-to}}
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    {{#if session.isLoggedin}}
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            {{format-name session.name}} <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            {{#link-to 'profile' tagName="li"}}<a>Profile</a>{{/link-to}}
+                            <li class="divider"></li>
+                            <li><a {{action 'logout'}}>Logout</a></li>
+                        </ul>
+                    </li>
+                    {{else}}
+                        {{#link-to 'register' tagName="li"}}<a>Register</a>{{/link-to}}
+                        {{#link-to 'login' tagName="li"}}<a>Login</a>{{/link-to}}
+                    {{/if}}
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    {{outlet}}
 </div>
