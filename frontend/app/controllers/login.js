@@ -15,13 +15,11 @@ export default Ember.ObjectController.extend({
                         authToken  : data.token
                     });
                     localStorage.token = data.token;
+                    self.setProperties({username : '', password : ''});
                     self.transitionToRoute('index');
                 },
                 error: function(response) {
-                    self.setProperties({
-                        username : '',
-                        password : ''
-                    });
+                    self.setProperties({username : '', password : ''});
                 }
             });
         },

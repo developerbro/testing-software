@@ -1,5 +1,6 @@
-var express = require('express');
-var User    = require('../models/user');
+var express  = require('express');
+var User     = require('../models/user');
+var passport = require('passport');
 
 module.exports = function(app) {
     var router  = express.Router();
@@ -13,13 +14,14 @@ module.exports = function(app) {
             res.json(201, {user: user});
             });
         })
-    .get(function(req, res) {
-        User.find(function(err, users) {
-            if (err)
-            res.send(err);
-        res.json({ users: users });
+        .get(passport.authenticate('EmberAuth', {session: false}), 
+            function(req, res) {
+            User.find(function(err, users) {
+                if (err)
+                    res.send(err);
+                res.json({ users: users });
+            });
         });
-    });
 
     router.route('/users/:user_id')
         .get(function(req, res) {
