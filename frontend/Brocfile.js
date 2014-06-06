@@ -21,6 +21,15 @@ app.import('vendor/ember-data/ember-data.js');
 // Ember Simple Auth
 app.import('vendor/ember-simple-auth/ember-simple-auth.js');
 
+// Notify
+app.import('vendor/alertify.js/themes/alertify.bootstrap.css');
+app.import('vendor/alertify.js/themes/alertify.core.css');
+app.import('vendor/alertify.js/themes/alertify.default.css');
+app.import('vendor/ember-notify/dist/named-amd/main.js', {
+    'ember-notify': ['default']
+});
+app.import('vendor/ember-notify/dist/ember-notify.css');
+
 // bootstrap
 app.import('vendor/bootstrap/dist/js/bootstrap.js');
 app.import('vendor/bootstrap/dist/css/bootstrap.css');
@@ -30,13 +39,6 @@ var bootstrapTree = pickFiles('vendor/bootstrap/dist/fonts', {
     files   : ['**/*'],
     destDir : '/fonts'
 });
-
-// Notify
-app.import('vendor/ember-notify/dist/named-amd/main.js', {
-    'ember-notify': ['default']
-});
-app.import('vendor/ember-notify/dist/ember-notify.css');
-
 
 // If the library that you are including contains AMD or ES6 modules that
 // you would like to import into your application please specify an

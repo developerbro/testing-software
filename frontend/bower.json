@@ -14,6 +14,7 @@
     "ember-load-initializers": "stefanpenner/ember-load-initializers#0.0.1",
     "ember-simple-auth": "https://github.com/simplabs/ember-simple-auth-component.git",
     "ember-notify" : "https://github.com/aexmachina/ember-notify.git",
+    "alertify.js" : "latest",
     "bootstrap": "latest"
   }
 }
