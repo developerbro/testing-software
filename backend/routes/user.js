@@ -14,14 +14,14 @@ module.exports = function(app) {
             res.json(201, {user: user});
             });
         })
-        .get(passport.authenticate('EmberAuth', {session: false}), 
+    .get(passport.authenticate('EmberAuth', {session: false}), 
             function(req, res) {
-            User.find(function(err, users) {
-                if (err)
+                User.find(function(err, users) {
+                    if (err)
                     res.send(err);
                 res.json({ users: users });
+                });
             });
-        });
 
     router.route('/users/:user_id')
         .get(function(req, res) {

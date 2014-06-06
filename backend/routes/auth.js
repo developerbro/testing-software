@@ -12,16 +12,16 @@ module.exports = function(app) {
         });
     });
     router.post('/auth/login', function(req, res) {
-       var u = req.body; 
-       var passHash = crypto.createHash('md5').update(u.password).digest('hex');
-       User.findOne({username: u.username, password: passHash}, function(err, user) {
-           if (err) res.send(err);
-           if (user) {
-               user.token = crypto.randomBytes(20).toString('hex');
-               user.save();
-           }
-           res.send(user);
-       });
+        var u = req.body; 
+        var passHash = crypto.createHash('md5').update(u.password).digest('hex');
+        User.findOne({username: u.username, password: passHash}, function(err, user) {
+            if (err) res.send(err);
+            if (user) {
+                user.token = crypto.randomBytes(20).toString('hex');
+                user.save();
+            }
+            res.send(user);
+        });
     }); 
     router.post('/auth/register', function(req, res) {
         var u = req.body;

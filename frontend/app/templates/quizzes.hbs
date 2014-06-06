@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-md-12">
+        {{#link-to 'quizzes-new' class="btn btn-primary"}}New Quiz{{/link-to}}<br><br>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3">
+        Quiz list<br>
+        <ul>
+        {{#each content}}
+            <li>
+            {{#link-to 'quiz' this}}
+                {{title}}
+            {{/link-to}}<br>
+            </li>
+        {{/each}}
+        </ul>
+    </div>
+    <div class="col-md-9">
+        {{outlet}}
+    </div>
+</div>

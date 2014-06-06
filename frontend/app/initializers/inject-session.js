@@ -2,7 +2,7 @@ import Session from 'frontend/objects/session';
 
 export default {
     name       : 'injectSession',
-    after      : 'store',
+    before     : 'store',
     initialize : function(container, application) {
         var session = Session.create();
         if (localStorage.token) {
