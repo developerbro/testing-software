@@ -25,15 +25,21 @@ module.exports = function(app) {
     }); 
     router.post('/auth/register', function(req, res) {
         var u = req.body;
-        var user = new User({
-            username : u.username,
-            email    : u.useremail,
-            password : crypto.createHash('md5').update(u.userpass).digest('hex'),
-            token    : crypto.randomBytes(20).toString('hex')
-        });
-        user.save(function(err, user) {
-            if (err) res.send(err);
-            res.send(201, "");
+        User.findOne({username: u.username}, function(err, user) {
+            if (user) {
+                res.send(422, "User already registered");
+            } else {
+                var user = new User({
+                    username : u.username,
+                    email    : u.useremail,
+                    password : crypto.createHash('md5').update(u.userpass).digest('hex'),
+                    token    : crypto.randomBytes(20).toString('hex')
+                });
+                user.save(function(err, user) {
+                    if (err) res.send(err);
+                    res.send(201, "");
+                });
+            }
         });
     });
 

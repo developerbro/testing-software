@@ -20,9 +20,10 @@ export default Ember.ObjectController.extend({
                     self.transitionToRoute('login');
                 },
                 error: function(response) {
-                    console.log(response);
-                    self.setProperties({'username':'','useremail':'','userpass':'','userpassconfirm':''});
-                    self.transitionToRoute('login');
+                    if (response.status===422) {
+                        self.setProperties({'username':'','useremail':'','userpass':'','userpassconfirm':''});
+                        Notify.warning('User already registered and try another!');
+                    }
                 }
             });
 

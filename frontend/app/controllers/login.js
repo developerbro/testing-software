@@ -1,3 +1,5 @@
+import Notify from 'ember-notify';
+
 export default Ember.ObjectController.extend({
     username : '',
     password : '',
@@ -20,6 +22,7 @@ export default Ember.ObjectController.extend({
                 },
                 error: function(response) {
                     self.setProperties({username : '', password : ''});
+                    Notify.warning('cannot login please try another!');
                 }
             });
         },
