@@ -31,6 +31,12 @@ var bootstrapTree = pickFiles('vendor/bootstrap/dist/fonts', {
     destDir : '/fonts'
 });
 
+// Notify
+app.import('vendor/ember-notify/dist/named-amd/main.js', {
+    'ember-notify': ['default']
+});
+app.import('vendor/ember-notify/dist/ember-notify.css');
+
 
 // If the library that you are including contains AMD or ES6 modules that
 // you would like to import into your application please specify an
