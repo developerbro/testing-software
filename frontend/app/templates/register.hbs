@@ -1,7 +1,8 @@
-<form {{action 'register' on='submit'}}>
-    {{input type="text" value=username  placeholder="user name..."}}<br>
-    {{input type="email" value=useremail  placeholder="email..."}}<br>
-    {{input type="password" value=userpass placeholder="password..."}}<br>
-    {{input type="password" value=userpassconfirm placeholder="repeat password..."}}<br>
-    <button type='submit'>Register</button>
+<form class="form-register" role="form" {{action 'register' on='submit'}}>
+    <h2 class="form-register-heading">User Registration</h2>
+    {{input type="text" value=username  placeholder="user name..." class="form-control"}}
+    {{input type="email" value=useremail  placeholder="email..." class="form-control"}}
+    {{input type="password" value=userpass placeholder="password..." class="form-control"}}
+    {{input type="passwordrepeat" value=userpassconfirm placeholder="repeat password..." class="form-control"}}
+    <button class="btn btn-lg btn-primary btn-block" type='submit'>Register</button>
 </form>
