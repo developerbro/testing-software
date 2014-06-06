@@ -1,7 +1,7 @@
 <form class="form-signin" role="form" {{action login on='submit'}}>
-    <h2 class="form-signin-heading">Please log in</h2>
-    {{view Ember.TextField value=username placeholder='user name...' class="form-control"}}<br>
-    {{view Ember.TextField type='password' value=password placeholder='password...' class="form-control"}}<br>
+    <h2 class="form-signin-heading">Please Log In</h2>
+    {{view Ember.TextField type="text" value=username placeholder='user name...' class="form-control"}}
+    {{view Ember.TextField type='password' value=password placeholder='password...' class="form-control"}}
     <button class="btn btn-lg btn-primary btn-block" type='submit'>Login</button>
     <button class="btn btn-lg btn-primary btn-block" {{action 'register'}}>Register</button>
 </form>

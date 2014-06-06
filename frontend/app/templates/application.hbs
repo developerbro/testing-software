@@ -3,7 +3,7 @@
 {{#link-to 'index'}}index{{/link-to}}
 {{#if session.isLoggedin}}
     {{session.name}}
-    <button {{action 'logout'}}>logout</button>
+    <button class="btn btn-primary" {{action 'logout'}}>logout</button>
 {{else}}
     {{#link-to 'login'}}login{{/link-to}}
 {{/if}}
