@@ -1,5 +1,13 @@
-Quiz<br>
-{{input type="text" value=title placeholder="quiz title..."}}<br>
-{{textarea value=question placeholder="question..."}}<br>
-<button {{action 'delete' this}}>Delete</button>
-<button {{action 'save' this}}>Save</button>
+<div class="col-md-8">
+    <h3>Quiz</h3>
+    <form role="form">
+        <button class="btn btn-danger" {{action 'delete' this}}>Delete</button>
+        <button class="btn btn-primary" {{action 'save' this}}>Save</button><br><br>
+        <div class="form-group">
+            {{input type="text" value=title placeholder="quiz title..." class="form-control"}}
+        </div>
+        <div class="form-group">
+            {{textarea value=question placeholder="question..." class="form-control"}}
+        </div>
+    </form>
+</div>

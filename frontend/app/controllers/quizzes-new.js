@@ -3,6 +3,15 @@ import Notify from 'ember-notify';
 export default Ember.ObjectController.extend({
     actions: {
         save: function() {
+            var content = this.get('content');
+            if (Em.isEmpty(content.get('title'))) {
+                Notify.warning('Please insert title!');
+                return;
+            }
+            if (Em.isEmpty(content.get('question'))) {
+                Notify.warning('Please insert question!');
+                return;
+            }
             var self = this;
             this.get('content').save().then(function(quiz) {
                 Notify.alert('saved!');

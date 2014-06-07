@@ -16,6 +16,7 @@
     "ember-notify" : "https://github.com/aexmachina/ember-notify.git",
     "alertify.js" : "latest",
     "bootstrap": "latest",
-    "js-md5": "latest"
+    "js-md5": "latest",
+    "ember-i18n" : "latest"
   }
 }
