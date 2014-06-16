@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Testing Software</title>
+    <title>Frontend</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,11 +14,13 @@
   </head>
   <body>
     <script>
-      window.ENV = {{ENV}};
+      window.FrontendENV = {{ENV}};
+      window.EmberENV = window.FrontendENV.EmberENV;
     </script>
+    <script src="assets/vendor.js"></script>
     <script src="assets/frontend.js"></script>
     <script>
-      window.Frontend = require('frontend/app')['default'].create(ENV.APP);
+      window.Frontend = require('frontend/app')['default'].create(FrontendENV.APP);
     </script>
   </body>
 </html>

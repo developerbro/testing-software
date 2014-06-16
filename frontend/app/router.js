@@ -1,5 +1,5 @@
 var Router = Ember.Router.extend({
-  location: ENV.locationType
+  location: FrontendENV.locationType
 });
 
 Router.map(function() {
